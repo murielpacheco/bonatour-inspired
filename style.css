@@ -7,7 +7,10 @@
 
 
 body {
-    background-color: rgba(0, 0, 0, 0.822);
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgb(66, 64, 85) 63%, rgba(18, 18, 32, 0.534) 100%);
 }
 
 .container {
@@ -20,9 +23,10 @@ body {
 }
 
 .main-nav {
+    height: 45px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     color: white;
 }
 
@@ -31,9 +35,23 @@ body {
     list-style-type: none;
 }
 
+
+
 .main-nav li {
     display: inline-block;
     margin-left: 32px;
+    border: 1px solid white;
+    padding: 12px;
+    transform: scale(1);
+}
+
+.main-nav-ul {
+    height: 0vh;
+}
+
+.main-nav li:hover {
+    background-color:transparent;
+    transform: scale(1.1);
 }
 
 .main-nav li:nth-last-child(1) {
@@ -47,7 +65,7 @@ body {
 }
 
 .get-started h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
 }
 
 .btn {
@@ -61,7 +79,7 @@ body {
 
 .btn:hover,
 .btn:focus{
-    transform: scale(1.1);
+    transform: scale(1.2);
     font-weight: bold;
 }
 
@@ -82,7 +100,7 @@ body {
 }
 
 #btn-change:active {
-    background-color: rgb(187, 187, 187);
+    background-color: #bbbbbb;
     transition: 1s;
 }
 
@@ -90,31 +108,56 @@ body {
     font-size: 22pt;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 777px) {
 
-    .main-nav {
+
+    .main-nav-ul{
+        position:absolute;
+        top: 4em;
+        right: 2em;
         display: flex;
-        justify-content: between;
-    }
-    .main-nav ul li {
-        display: block;
-        margin-bottom: 12px;
-
-    }
-
-    .get-started {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
-        margin-left: 145px;
+        overflow: hidden;
     }
 
-    .btn {
-        padding: 0.8rem 1.9rem;
+    .menu-toggle {  
+        padding: 1em;
+        position: absolute;
+        top: 2em;
+        right: 6em;
+        cursor: pointer;
     }
 
-    #btn-change {
-        bottom: 3.5%;
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        content: "";
+        display: block;
+        background-color: white;
+        width: 1.75rem;
+        height: 4px;
+        border-radius: 3px;
     }
+
+    .hamburger::before {
+        transform: translateY(-7px);
+    }
+
+    .hamburger::after {
+        transform: translateY(3px);
+    }
+
+    .alooooo {
+    overflow: visible;
+    }
+
+    .get-started, .footer {
+        margin: auto;
+        margin-top: 120px;
+    }
+
+    .no-hamburger {
+        display: none;
+    }
+
 }
