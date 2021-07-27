@@ -11,3 +11,8 @@ $(document).ready(()=> {
         $(".btn").css("color", "white")
     })
 })
+
+$(".menu-toggle").click(() => {
+    $(".main-nav-ul").toggleClass("alooooo", 500);
+    $(".menu-toggle").toggleClass("no-hamburger",);
+})
